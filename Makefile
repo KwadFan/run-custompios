@@ -7,7 +7,7 @@ build:
 	docker build -t kwadfan:run-custompios ./src
 
 run:
-	docker run -it kwadfan:run-custompios /bin/bash
+	docker run --rm -it kwadfan:run-custompios /bin/bash
 
 prune:
-	docker image prune -a
+	docker image rm -f kwadfan:run-custompios
