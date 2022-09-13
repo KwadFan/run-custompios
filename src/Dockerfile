@@ -20,5 +20,11 @@ RUN set -ex \
     && apt autoremove \
     && rm -rf /var/lib/apt/lists/*
 
+# link python interpreter
+RUN ln -s /usr/bin/python3 /usr/bin/python
+
 # Get latest CustomPiOS
 RUN git clone ${CUSTOMPIOS} /CustomPiOS
+
+# link build script
+RUN ln -s /CustomPiOS/nightly_build_scripts/custompios_nightly_build /usr/bin/build
