@@ -1,5 +1,9 @@
 # EditorConfig is awesome: https://EditorConfig.org
 
+# written by Stephan Wendel aka KwadFan <me@stephanwe.de>
+# Copyright 2022
+# This file is distributed under GPLv3
+
 # top-most EditorConfig file
 root = true
 
