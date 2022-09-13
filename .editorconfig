@@ -13,3 +13,7 @@ insert_final_newline = false
 
 [*.{yml,yaml}]
 indent_size = 2
+
+[{Makefile,*.mk}]
+indent_style = tab
+indent_size = 4
