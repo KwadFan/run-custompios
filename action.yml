@@ -16,4 +16,4 @@ runs:
     - name: Run CustomPiOS
       shell: bash
       run: |
-        docker run -rm --device /dev/loop-control guysoft/custompios:devel build
+        docker run --rm --device /dev/loop-control guysoft/custompios:devel build
