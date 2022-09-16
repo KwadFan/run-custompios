@@ -1,0 +1,15 @@
+# run-custompios action.yml
+# written by Stephan Wendel aka KwadFan <me@stephanwe.de>
+# Copyright 2022
+# This file is distributed under GPLv3
+name: run-custompios
+description: Run CustomPiOS as git action
+author: Stephan Wendel aka KwadFan
+inputs:
+  source_dir:
+    description: Path to 'src' directory
+    required: true
+
+runs:
+  using: "docker"
+  image: "src/Dockerfile"

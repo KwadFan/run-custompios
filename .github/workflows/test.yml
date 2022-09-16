@@ -12,3 +12,10 @@ jobs:
         run: |
           echo $GITHUB_ENV
           echo $GITHUB_EVENT_PATH
+
+      - name: Clone Repo
+        uses: action/git-checkout@v3
+
+      - name:
+        id: build-image
+        uses: ./action.yml
