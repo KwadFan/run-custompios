@@ -11,3 +11,4 @@ jobs:
       - name: Print Env
         run: |
           echo $GITHUB_ENV
+          echo $GITHUB_EVENT_PATH
