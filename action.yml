@@ -15,4 +15,4 @@ runs:
   steps:
     - name: Build Docker Image
       shell: bash
-      run: docker build ./src/Dockerfile
+      run: docker build ./src/
