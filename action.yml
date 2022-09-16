@@ -11,6 +11,6 @@ inputs:
     required: true
 
 runs:
-  name: Build Container
-  using: "docker"
-  image: "./src/Dockerfile"
+  - name: Build Container
+    using: "docker"
+    image: "./src/Dockerfile"
