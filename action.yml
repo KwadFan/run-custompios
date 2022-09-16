@@ -13,6 +13,7 @@ inputs:
 runs:
   using: "composite"
   steps:
-    - name: Build Docker Image
+    - name: Run CustomPiOS
       shell: bash
-      run: docker build ./src/
+      run: |
+        docker run -rm --device /dev/loop-control guysoft/custompios:devel build
