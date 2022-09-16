@@ -12,6 +12,8 @@ jobs:
         run: |
           echo $GITHUB_ENV
           echo $GITHUB_EVENT_PATH
+      - name: Checkout
+        uses: actions/checkout@v3
 
       - name:
         id: build-image
