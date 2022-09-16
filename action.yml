@@ -11,8 +11,6 @@ inputs:
     required: true
 
 runs:
-  using: "composite"
-  steps:
-    - name: Build Container
-      uses: "docker"
-      image: "./src/Dockerfile"
+  - name: Build Container
+    uses: "docker"
+    image: "./src/Dockerfile"
