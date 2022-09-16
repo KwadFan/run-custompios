@@ -17,4 +17,4 @@ jobs:
 
       - name:
         id: build-image
-        uses: ./action.yml
+        uses: run-custompios/action.yml
