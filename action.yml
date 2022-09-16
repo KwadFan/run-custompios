@@ -11,5 +11,6 @@ inputs:
     required: true
 
 runs:
-  uses: "docker"
+  name: Build Container
+  using: "docker"
   image: "./src/Dockerfile"
