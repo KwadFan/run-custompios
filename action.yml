@@ -15,4 +15,4 @@ runs:
   steps:
     - name: Build Container
       uses: "docker"
-      image: "./src"
+      image: "./src/Dockerfile"
