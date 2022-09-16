@@ -23,8 +23,10 @@ RUN set -ex \
 # link python interpreter
 RUN ln -s /usr/bin/python3 /usr/bin/python
 
-# Get latest CustomPiOS
-RUN git clone ${CUSTOMPIOS} /CustomPiOS
+# mount point for external source
+RUN mkdir -p /distro
 
-# link build script
-RUN ln -s /CustomPiOS/nightly_build_scripts/custompios_nightly_build /usr/bin/build
+COPY ./entrypoint.sh /entrypoint.sh
+
+ENTRYPOINT [ "/bin/bash" ]
+CMD [ "/entrypoint.sh" ]
