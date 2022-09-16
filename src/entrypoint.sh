@@ -7,3 +7,9 @@ set -eoux pipefail
 
 echo $SHELL
 echo "Hello! I am working :)"
+
+# Check git command
+if [[ -z "$(command -v git)" ]]; then
+    echo "Command 'git' not found."
+    exit 1
+fi

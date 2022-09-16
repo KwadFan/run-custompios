@@ -1,0 +1,13 @@
+name: Tests
+
+on:
+  workflow_dispatch:
+
+jobs:
+  printenv:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Print Env
+        run: |
+          echo $GITHUB_ENV
