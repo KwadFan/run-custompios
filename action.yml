@@ -11,5 +11,7 @@ inputs:
     required: true
 
 runs:
-  using: "docker"
-  image: "./src/Dockerfile"
+  using: "composite"
+  steps:
+    - name: Build Docker Image
+      run: docker build ./src/Dockerfile
