@@ -10,11 +10,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Print Env
-        run: |
-          echo $GITHUB_ENV
-          echo $GITHUB_EVENT_PATH
-
-      - name:
+      - name: Run CustomPiOS
         id: build-image
         uses: KwadFan/run-custompios@main
