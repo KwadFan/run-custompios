@@ -34,6 +34,11 @@ inputs:
     required: false
     default: "false"
 
+  testaction:
+    description: "Verbose output for Debugging only!"
+    required: false
+    default: "false"
+
 runs:
   using: "composite"
   steps:
@@ -51,4 +56,7 @@ runs:
     - name: "Run CustomPiOS"
       shell: bash
       run: |
-        docker run kwadfan:run-custompios
+
+        if [[ "${{ inputs.testaction }}" = ]]; then
+          docker run --env-file ./test/testenv kwadfan:run-custompios
+        fi
