@@ -5,13 +5,19 @@
 
 # shellcheck enable=require-variable-braces
 
-set -eoux pipefail
+set -eou pipefail
+
+# Debug
+if [ "${ACTION_DEBUG}" = "true" ]; then
+    echo -e "\e[33mDebug: Verbose output enabled!\e[0m"
+    set -x
+fi
 
 # source functions.sh
 if [[ -f "/functions.sh" ]]; then
     source /functions.sh
 else
-    echo -e "functions.sh not found! Exiting..."
+    echo_red "functions.sh not found! Exiting..."
     exit 1
 fi
 
@@ -23,9 +29,15 @@ fi
 
 # clone repo
 if [[ -n "${CUSTOMPIOS_REPO}" ]]; then
+    echo_blue "Clone CustomPiOS repo from ${CUSTOMPIOS_REPO}"
     gitclone "${CUSTOMPIOS_REPO}" "$CUSTOMPIOS_BRANCH"
 else
-    echo -e "CustomPiOS Repository not set! Exiting..."
+    echo_red "CustomPiOS Repository not set! Exiting..."
     exit 1
 fi
 
+# Checkout commit
+if [[ -n "${CUSTOMPIOS_COMMIT}" ]]; then
+    echo_blue "Checkout CustomPiOS commit: ${CUSTOMPIOS_COMMIT}"
+    checkout_commit "${CUSTOMPIOS_COMMIT}"
+fi

@@ -12,6 +12,7 @@ wget curl p7zip-full python3 zip sudo xz-utils ca-certificates"
 ENV BPO="qemu qemu-user-static"
 
 #Initialize external ENV Vars
+ENV ACTION_DEBUG="false"
 ENV CUSTOMPIOS_REPO=""
 ENV CUSTOMPIOS_BRANCH=""
 ENV CUSTOMPIOS_COMMIT=""

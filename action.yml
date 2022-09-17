@@ -28,6 +28,12 @@ inputs:
     description: Path to 'src' directory
     required: true
 
+  # For Development only!
+  debug:
+    description: "Verbose output for Debugging only!"
+    required: false
+    default: "false"
+
 runs:
   using: "composite"
   steps:
