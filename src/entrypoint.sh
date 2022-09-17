@@ -42,9 +42,5 @@ if [[ -n "${CUSTOMPIOS_COMMIT}" ]]; then
     checkout_commit "${CUSTOMPIOS_COMMIT}"
 fi
 
-# Link Build script
-if [[ -f "/CustomPiOS/src/nightly_build_scripts/custompios_nightly_build" ]]; then
-    link_script
-fi
-
+#start build
 build
