@@ -43,6 +43,8 @@ if [[ -n "${CUSTOMPIOS_COMMIT}" ]]; then
 fi
 
 # Link Build script
-if [[ -f "/CustomPiOS/nightly_build_scripts/custompios_nightly_build" ]]; then
+if [[ -f "/CustomPiOS/src/nightly_build_scripts/custompios_nightly_build" ]]; then
     link_script
 fi
+
+build

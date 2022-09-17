@@ -56,5 +56,5 @@ checkout_commit() {
 }
 
 link_script() {
-    ln -s /CustomPiOS/nightly_build_scripts/custompios_nightly_build /usr/bin/build
+    ln -s /CustomPiOS/src/nightly_build_scripts/custompios_nightly_build /usr/bin/build
 }
