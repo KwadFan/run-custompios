@@ -11,7 +11,6 @@ jobs:
 
     steps:
       - name: Run CustomPiOS
-        id: test-action
         uses: KwadFan/run-custompios@main
         with:
           testaction: true

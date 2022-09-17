@@ -58,7 +58,7 @@ runs:
     - name: "Check Inputs"
       shell: bash
       run: |
-        if [[ -n "${{ inputs.modules }}" ]]; then
+        if [[ -z "${{ inputs.modules }}" ]]; then
           echo -e "\e[31mPath to modules not set! Exiting...\e[0m"
           exit 1
         fi
