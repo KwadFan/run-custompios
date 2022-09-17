@@ -21,14 +21,7 @@ runs:
       run: |
         sudo modprobe loop
 
-    - name: "Checkout action source"
-      uses: actions/checkout@v3
-      with:
-        repository: "KwadFan/run-custompios"
-        ref: "main"
-        path: "act_src"
-
     - name: "Build Container"
       shell: bash
       run: |
-        docker build --file act_src/src/Dockerfile
+        docker build https://github.com/KwadFan/run-custompios.git#main:src
