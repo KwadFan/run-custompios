@@ -7,7 +7,7 @@ build:
 	docker build --force-rm --tag kwadfan:run-custompios ./src
 
 test:
-	docker run --rm kwadfan:run-custompios
+	docker run --rm -e CUSTOMPIOS_REPO=KwadFan/CustomPiOS kwadfan:run-custompios
 
 run:
 	docker run --rm -it --entrypoint /bin/bash kwadfan:run-custompios

@@ -10,9 +10,19 @@ color: red
 
 inputs:
   custompios_repo:
-    description: "Repository of CustomPiOS"
+    description: "Use specific CustomPiOS repository"
     required: true
     default: "guysoft/CustomPiOS"
+
+  custompios_branch:
+    description: "Use specific CustomPiOS branch"
+    required: false
+    default: ""
+
+  custompios_commit:
+    description: "Use specific CustomPiOS branch"
+    required: false
+    default: ""
 
   workspace:
     description: Path to 'src' directory

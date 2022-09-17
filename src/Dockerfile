@@ -10,7 +10,11 @@ ENV VERSION="bullseye"
 ENV PACKAGES="binfmt-support build-essential lsof sudo util-linux fdisk git \
 wget curl p7zip-full python3 zip sudo xz-utils ca-certificates"
 ENV BPO="qemu qemu-user-static"
-ENV CUSTOMPIOS="https://github.com/guysoft/CustomPiOS.git"
+
+#Initialize external ENV Vars
+ENV CUSTOMPIOS_REPO=""
+ENV CUSTOMPIOS_BRANCH=""
+ENV CUSTOMPIOS_COMMIT=""
 
 # Install Dependencies
 RUN set -ex \
@@ -28,7 +32,6 @@ RUN mkdir -p /distro
 
 COPY entrypoint.sh /entrypoint.sh
 COPY functions.sh /functions.sh
-
 
 ENTRYPOINT [ "/bin/bash" ]
 CMD [ "/entrypoint.sh" ]
