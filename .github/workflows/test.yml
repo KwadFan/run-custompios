@@ -13,5 +13,5 @@ jobs:
       - name: Run CustomPiOS
         uses: KwadFan/run-custompios@main
         with:
-          modules: src/
+          modules: src
           testaction: true
