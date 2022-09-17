@@ -26,16 +26,16 @@ inputs:
     default: ""
 
   # CustomPiOS build setup
-  workspace:
-    description: "Path to workspace (usually src/workspace)"
-    required: true
-
   modules:
     description: "Path to modules (usually src/)"
     required: true
 
   image:
     description: "Path to modules (usually src/image)"
+    required: false
+
+  workspace:
+    description: "Path to workspace (usually src/workspace)"
     required: false
 
   # For Development only!
@@ -66,7 +66,12 @@ runs:
     - name: "Run CustomPiOS"
       shell: bash
       run: |
+        if [[ -n "${{ inputs.modules }}" ]]; then
+          echo -e "\e[31mPath to modules not set! Exiting...\e[0m"
+          exit 1
+        fi
 
+        # Docker default parameters
         DOCKER_PARAM=(--rm --privileged)
 
         if [[ "${{ inputs.testaction }}" = "true" ]]; then
