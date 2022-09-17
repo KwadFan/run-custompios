@@ -15,10 +15,10 @@ gitclone() {
     repo="${1}"
     branch="${2}"
     if [[ -z "${branch}" ]]; then
-        git clone --depth=1 https://github.com/"${repo}".git /CustomPiOS
+        git clone --progress https://github.com/"${repo}".git /CustomPiOS
     fi
     if [[ -n "${branch}" ]]; then
-        git clone "${repo}" --branch "${branch}" \
+        git clone "${repo}" --branch "${branch}" --progress \
         https://github.com/"${repo}".git /CustomPiOS
     fi
 }
