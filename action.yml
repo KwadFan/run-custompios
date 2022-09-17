@@ -15,4 +15,6 @@ inputs:
 
 runs: "composite"
   steps:
-    runs: docker build ./src
+    - name: "Build Container"
+      run: |
+        docker build ./src
