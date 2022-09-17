@@ -13,7 +13,8 @@ inputs:
     description: Path to 'src' directory
     required: true
 
-runs: "composite"
+runs:
+  using: "composite"
   steps:
     - name: "Build Container"
       run: |
