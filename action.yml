@@ -64,4 +64,4 @@ runs:
           DOCKER_PARAM+=(--env CUSTOMPIOS_REPO=KwadFan/Custompios)
         fi
 
-        docker run "${DOCKER_PARAMS[@]}" kwadfan:run-custompios
+        docker run "${DOCKER_PARAM[@]}" kwadfan:run-custompios
