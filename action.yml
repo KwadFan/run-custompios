@@ -71,7 +71,7 @@ runs:
     - name: "Build Container"
       shell: bash
       run: |
-        echo -e "\e[32m Build Container ..."
+        echo -e "\e[32m Build Container ...\e[0m"
         docker build --tag kwadfan:run-custompios \
         https://github.com/KwadFan/run-custompios.git#main:src
 
@@ -91,26 +91,26 @@ runs:
 
         # Build Volumes Paramter
         # path to modules
-        DOCKER_PARAM+=(-v ${{ inputs.modules }}:/distro)
+        DOCKER_PARAM+=("-v ${{ inputs.modules }}:/distro")
 
         #path to image (use ${{ inputs.modules }}/image as fallback)
         if [ -n "${{ inputs.image }}" ]; then
-          DOCKER_PARAM+=(-v ${{ inputs.image }}:/distro/image)
+          DOCKER_PARAM+=("-v ${{ inputs.image }}:/distro/image")
         else
-          DOCKER_PARAM+=(-v ${{ inputs.modules }}/image:/distro/image)
+          DOCKER_PARAM+=("-v ${{ inputs.modules }}/image:/distro/image")
         fi
 
         #path to workspace (use ${{ inputs.modules }}/workspace as fallback)
         if [ -n "${{ inputs.workspace }}" ]; then
-          DOCKER_PARAM+=(-v ${{ inputs.workspace }}:/distro/workspace)
+          DOCKER_PARAM+=("-v ${{ inputs.workspace }}:/distro/workspace")
         else
-          DOCKER_PARAM+=(-v ${{ inputs.modules }}/workspace:/distro/workspace)
+          DOCKER_PARAM+=("-v ${{ inputs.modules }}/workspace:/distro/workspace")
         fi
 
         # Debug message show $DOCKER_PARAMS
         if [ ${{ inputs.debug }} = "true" ]; then
           echo -e "\e[33mRunning docker with:\e[0m"
-          echo -e "\e[33m${DOCKER_PARAM[@]\e[0m"
+          echo -e "\e[33m${DOCKER_PARAM[@]}\e[0m"
         fi
 
         echo -e "\e[32m About to run CustomPiOS ..."
