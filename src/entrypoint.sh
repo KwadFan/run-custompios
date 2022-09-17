@@ -42,7 +42,7 @@ if [[ -n "${CUSTOMPIOS_COMMIT}" ]]; then
     checkout_commit "${CUSTOMPIOS_COMMIT}"
 fi
 
-
-if [ -f "/CustomPiOS/src/nightly_build_scripts/custompios_nightly_build" ]; then
-    echo "Huhu"
+# Link Build script
+if [[ -f "/CustomPiOS/nightly_build_scripts/custompios_nightly_build" ]]; then
+    link_script
 fi
