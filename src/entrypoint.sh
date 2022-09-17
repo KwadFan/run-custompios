@@ -46,3 +46,6 @@ fi
 if [[ -f "/CustomPiOS/nightly_build_scripts/custompios_nightly_build" ]]; then
     link_script
 fi
+
+# start build
+build
