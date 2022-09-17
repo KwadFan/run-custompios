@@ -54,7 +54,3 @@ checkout_commit() {
         popd || exit 1
     fi
 }
-
-link_script() {
-    ln -s /CustomPiOS/nightly_build_scripts/custompios_nightly_build /usr/bin/build
-}
