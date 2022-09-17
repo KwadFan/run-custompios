@@ -9,7 +9,12 @@ branding: box
 color: red
 
 inputs:
-  source_dir:
+  custompios_repo:
+    description: "Repository of CustomPiOS"
+    required: true
+    default: "guysoft/CustomPiOS"
+
+  workspace:
     description: Path to 'src' directory
     required: true
 
@@ -27,7 +32,7 @@ runs:
         docker build --tag kwadfan:run-custompios \
         https://github.com/KwadFan/run-custompios.git#main:src
 
-    - name: "Run Container"
+    - name: "Run CustomPiOS"
       shell: bash
       run: |
         docker run kwadfan:run-custompios

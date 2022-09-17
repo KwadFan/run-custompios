@@ -26,7 +26,9 @@ RUN ln -s /usr/bin/python3 /usr/bin/python
 # mount point for external source
 RUN mkdir -p /distro
 
-COPY ./entrypoint.sh /entrypoint.sh
+COPY entrypoint.sh /entrypoint.sh
+COPY functions.sh /functions.sh
+
 
 ENTRYPOINT [ "/bin/bash" ]
 CMD [ "/entrypoint.sh" ]
