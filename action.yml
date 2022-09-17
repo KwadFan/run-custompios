@@ -31,7 +31,7 @@ inputs:
     required: true
 
   image:
-    description: "Path to modules (usually src/image)"
+    description: "Path to directory containing image (usually src/image)"
     required: false
 
   workspace:
@@ -96,15 +96,11 @@ runs:
         #path to image (use ${{ inputs.modules }}/image as fallback)
         if [ -n "${{ inputs.image }}" ]; then
           DOCKER_PARAM+=(-v ${{ inputs.image }}:/distro/image)
-        else
-          DOCKER_PARAM+=(-v ${{ inputs.modules }}/image:/distro/image)
         fi
 
         #path to workspace (use ${{ inputs.modules }}/workspace as fallback)
         if [ -n "${{ inputs.workspace }}" ]; then
           DOCKER_PARAM+=(-v ${{ inputs.workspace }}:/distro/workspace)
-        else
-          DOCKER_PARAM+=(-v ${{ inputs.modules }}/workspace:/distro/workspace)
         fi
 
         # Debug message show $DOCKER_PARAMS
