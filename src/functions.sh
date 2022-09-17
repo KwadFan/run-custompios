@@ -61,7 +61,7 @@ build() {
         echo_green "Start build ..."
         bash +x ./build_dist
     else
-        echo_red "Couldnt start build, no valid source."
+        echo_red "Start build failed, no valid source! Exiting..."
         exit 1
     fi
 }
