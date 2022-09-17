@@ -29,15 +29,20 @@ echo_blue() {
 # clone repo
 gitclone() {
     local branch repo
+    local -a param
     repo="${1}"
     branch="${2}"
-    if [[ -z "${branch}" ]]; then
-        git clone --progress https://github.com/"${repo}".git /CustomPiOS
+    param=()
+    if [ "${ACTION_DEBUG}" = "true" ]; then
+        param+=(--progress)
     fi
+
     if [[ -n "${branch}" ]]; then
-        git clone "${repo}" --branch "${branch}" --progress \
-        https://github.com/"${repo}".git /CustomPiOS
+        param+=(--branch "${branch}")
     fi
+    param+=(https://github.com/"${repo}".git /CustomPiOS)
+
+    git clone "${param[@]}"
 }
 
 checkout_commit() {
