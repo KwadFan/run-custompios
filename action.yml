@@ -57,6 +57,10 @@ runs:
       shell: bash
       run: |
 
+        DOCKER_PARAM=()
+
         if [[ "${{ inputs.testaction }}" = "true" ]]; then
-          docker run --env-file ./test/testenv kwadfan:run-custompios
+          DOCKER_PARAM+=(--env ACTION_DEBUG=true)
         fi
+
+        docker run "${DOCKER_PARAMS[@]}" kwadfan:run-custompios
