@@ -25,4 +25,10 @@ runs:
       uses: actions/checkout@v3
       with:
         repository: "KwadFan/run-custompios"
+        ref: "main"
         path: "act_src"
+
+    - name: "Build Container"
+      shell: bash
+      run: |
+        docker build --file act_src/src/Dockerfile
