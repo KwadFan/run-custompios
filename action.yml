@@ -9,6 +9,7 @@ branding: box
 color: red
 
 inputs:
+  # CustomPiOS checkout setup
   custompios_repo:
     description: "Use specific CustomPiOS repository"
     required: true
@@ -24,9 +25,18 @@ inputs:
     required: false
     default: ""
 
+  # CustomPiOS build setup
   workspace:
-    description: Path to 'src' directory
+    description: "Path to workspace (usually src/workspace)"
     required: true
+
+  modules:
+    description: "Path to modules (usually src/)"
+    required: true
+
+  image:
+    description: "Path to modules (usually src/image)"
+    required: false
 
   # For Development only!
   debug:
