@@ -33,10 +33,12 @@ inputs:
   image:
     description: "Path to modules (usually src/image)"
     required: false
+    default: "${{ input.modules }}/image"
 
   workspace:
     description: "Path to workspace (usually src/workspace)"
     required: false
+    default: "${{ input.modules }}/workspace"
 
   # For Development only!
   debug:
@@ -71,6 +73,7 @@ runs:
     - name: "Build Container"
       shell: bash
       run: |
+        echo -e "\e[32m Build Container ..."
         docker build --tag kwadfan:run-custompios \
         https://github.com/KwadFan/run-custompios.git#main:src
 
@@ -81,9 +84,12 @@ runs:
         # Docker default parameters
         DOCKER_PARAM=(--rm --privileged)
 
+        # Test action, build basic image and compare sha256sum
+        # to ensure build runs successfully
         if [[ "${{ inputs.testaction }}" = "true" ]]; then
           DOCKER_PARAM+=(--env ACTION_DEBUG=true)
           DOCKER_PARAM+=(--env CUSTOMPIOS_REPO=${{ inputs.custompios_repo }})
         fi
 
+        echo -e "\e[32m About to run CustomPiOS ..."
         docker run "${DOCKER_PARAM[@]}" kwadfan:run-custompios

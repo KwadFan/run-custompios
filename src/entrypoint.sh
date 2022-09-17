@@ -17,13 +17,13 @@ fi
 if [[ -f "/functions.sh" ]]; then
     source /functions.sh
 else
-    echo_red "functions.sh not found! Exiting..."
+    echo -e "\e[31mERROR: functions.sh not found! \e[0mExiting..."
     exit 1
 fi
 
 # Check git command
 if [[ -z "$(command -v git)" ]]; then
-    echo "Command 'git' not found."
+    echo_red "Command 'git' not found. Exiting..."
     exit 1
 fi
 
