@@ -6,10 +6,10 @@ on:
   workflow_dispatch:
 
 jobs:
-  printenv:
+  testaction:
     runs-on: ubuntu-latest
 
     steps:
       - name: Run CustomPiOS
-        id: build-image
+        id: test-action
         uses: KwadFan/run-custompios@main
