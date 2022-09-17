@@ -61,6 +61,7 @@ runs:
 
         if [[ "${{ inputs.testaction }}" = "true" ]]; then
           DOCKER_PARAM+=(--env ACTION_DEBUG=true)
+          DOCKER_PARAM+=(--env CUSTOMPIOS_REPO=KwadFan/Custompios)
         fi
 
         docker run "${DOCKER_PARAMS[@]}" kwadfan:run-custompios
