@@ -48,4 +48,4 @@ if [[ -f "/CustomPiOS/nightly_build_scripts/custompios_nightly_build" ]]; then
 fi
 
 # start build
-build
+/usr/bin/build
