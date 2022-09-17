@@ -15,4 +15,4 @@ inputs:
 
 runs: "composite"
   steps:
-    run: docker build ./src
+    runs: docker build ./src
