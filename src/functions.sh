@@ -57,5 +57,11 @@ checkout_commit() {
 
 build() {
     cd /distro
-    bash +x ./build_dist
+    if [[ -f "${PWD}/build_dist" ]]; then
+        echo_green "Start build ..."
+        bash +x ./build_dist
+    else
+        echo_red "Couldnt start build, no valid source."
+        exit 1
+    fi
 }
