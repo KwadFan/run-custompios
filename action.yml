@@ -24,4 +24,9 @@ runs:
     - name: "Build Container"
       shell: bash
       run: |
-        docker build https://github.com/KwadFan/run-custompios.git#main:src
+        docker build --tag kwadfan:run-custompios \
+        https://github.com/KwadFan/run-custompios.git#main:src
+
+    - name: "Run Container"
+      shell: bash
+      run: |
