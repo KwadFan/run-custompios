@@ -5,19 +5,14 @@
 name: run-custompios
 description: Run CustomPiOS as git action
 author: Stephan Wendel aka KwadFan
+branding: box
+color: red
 
 inputs:
   source_dir:
     description: Path to 'src' directory
     required: true
 
-runs:
-  using: "docker"
-  image: "./src/Dockerfile"
-
-  using: "composite"
+runs: "composite"
   steps:
-    - id: clone_custompios
-      run: actions/checkout@v3
-      repository: 'guysoft/CustomPiOS'
-      path: /CustomPiOS
+    run: docker build ./src
