@@ -80,7 +80,7 @@ runs:
       run: |
 
         # Docker default parameters
-        DOCKER_PARAM=(--rm --privileged)
+        DOCKER_PARAM=(--rm --device /dev/loop-control)
 
         # Test action, build basic image and compare sha256sum
         # to ensure build runs successfully

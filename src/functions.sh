@@ -55,3 +55,6 @@ checkout_commit() {
     fi
 }
 
+link_script() {
+    ln -s /CustomPiOS/nightly_build_scripts/custompios_nightly_build /usr/bin/build
+}

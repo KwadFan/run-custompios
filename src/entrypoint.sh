@@ -41,3 +41,8 @@ if [[ -n "${CUSTOMPIOS_COMMIT}" ]]; then
     echo_blue "Checkout CustomPiOS commit: ${CUSTOMPIOS_COMMIT}"
     checkout_commit "${CUSTOMPIOS_COMMIT}"
 fi
+
+# Link Build script
+if [[ -f "/CustomPiOS/nightly_build_scripts/custompios_nightly_build" ]]; then
+    link_script
+fi
