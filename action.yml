@@ -16,7 +16,7 @@ inputs:
 runs:
   using: "composite"
   steps:
-    - name: "Build Container"
+    - name: "Enable loop module"
       shell: bash
       run: |
-        docker build ./src
+        sudo modprobe loop
