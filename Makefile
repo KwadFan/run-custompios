@@ -4,13 +4,13 @@
 # This file is distributed under GPLv3
 
 build:
-	docker build -t kwadfan:run-custompios ./src
+	docker build --force-rm --tag kwadfan:run-custompios ./src
 
 test:
-	docker run --force-rm kwadfan:run-custompios
+	docker run --rm kwadfan:run-custompios
 
 run:
-	docker run --force-rm -it --entrypoint /bin/bash kwadfan:run-custompios
+	docker run --rm -it --entrypoint /bin/bash kwadfan:run-custompios
 
 prune:
 	docker image rm -f kwadfan:run-custompios
