@@ -52,6 +52,17 @@ inputs:
 runs:
   using: "composite"
   steps:
+    # required not working as expected
+    # see https://github.com/actions/runner/issues/1070
+
+    - name: "Check Inputs"
+      shell: bash
+      run: |
+        if [[ -n "${{ inputs.modules }}" ]]; then
+          echo -e "\e[31mPath to modules not set! Exiting...\e[0m"
+          exit 1
+        fi
+
     - name: "Enable loop module"
       shell: bash
       run: |
@@ -66,10 +77,6 @@ runs:
     - name: "Run CustomPiOS"
       shell: bash
       run: |
-        if [[ -n "${{ inputs.modules }}" ]]; then
-          echo -e "\e[31mPath to modules not set! Exiting...\e[0m"
-          exit 1
-        fi
 
         # Docker default parameters
         DOCKER_PARAM=(--rm --privileged)
