@@ -33,12 +33,10 @@ inputs:
   image:
     description: "Path to modules (usually src/image)"
     required: false
-    default: ""
 
   workspace:
     description: "Path to workspace (usually src/workspace)"
     required: false
-    default: ""
 
   # For Development only!
   debug:
