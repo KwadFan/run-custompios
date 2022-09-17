@@ -20,3 +20,9 @@ runs:
       shell: bash
       run: |
         sudo modprobe loop
+
+    - name: "Checkout action source"
+      uses: actions/checkout@v3
+      with:
+        repository: "KwadFan/run-custompios"
+        path: "/act_src"
