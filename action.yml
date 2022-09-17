@@ -57,7 +57,7 @@ runs:
       shell: bash
       run: |
 
-        DOCKER_PARAM=()
+        DOCKER_PARAM=(--rm --priviledged)
 
         if [[ "${{ inputs.testaction }}" = "true" ]]; then
           DOCKER_PARAM+=(--env ACTION_DEBUG=true)
