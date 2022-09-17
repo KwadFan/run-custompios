@@ -33,12 +33,12 @@ inputs:
   image:
     description: "Path to modules (usually src/image)"
     required: false
-    default: "${{ inputs.modules }}/image"
+    default: ${{ inputs.modules }}/image
 
   workspace:
     description: "Path to workspace (usually src/workspace)"
     required: false
-    default: "${{ inputs.modules }}/workspace"
+    default: ${{ inputs.modules }}/workspace
 
   # For Development only!
   debug:
