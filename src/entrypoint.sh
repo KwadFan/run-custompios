@@ -43,6 +43,6 @@ if [[ -n "${CUSTOMPIOS_COMMIT}" ]]; then
 fi
 
 
-if [[ -f "/CustomPiOS/nightly_build_scripts/custompios_nightly_build" ]]; then
+if [ -f "/CustomPiOS/nightly_build_scripts/custompios_nightly_build" ]; then
     echo "Huhu"
 fi
