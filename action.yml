@@ -57,6 +57,6 @@ runs:
       shell: bash
       run: |
 
-        if [[ "${{ inputs.testaction }}" = ]]; then
+        if [[ "${{ inputs.testaction }}" = "true" ]]; then
           docker run --env-file ./test/testenv kwadfan:run-custompios
         fi
