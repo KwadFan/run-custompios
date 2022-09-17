@@ -17,5 +17,6 @@ runs:
   using: "composite"
   steps:
     - name: "Build Container"
+      shell: bash
       run: |
         docker build ./src
