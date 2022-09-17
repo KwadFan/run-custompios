@@ -30,3 +30,4 @@ runs:
     - name: "Run Container"
       shell: bash
       run: |
+        docker run kwadfan:run-custompios
