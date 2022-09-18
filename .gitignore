@@ -3,3 +3,6 @@ build.log
 
 # Ignore Test Workspace
 test/src/workspace
+
+#Ignore custompios path
+test/src/custompios_path
