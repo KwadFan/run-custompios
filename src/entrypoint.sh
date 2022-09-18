@@ -42,5 +42,8 @@ if [[ -n "${CUSTOMPIOS_COMMIT}" ]]; then
     checkout_commit "${CUSTOMPIOS_COMMIT}"
 fi
 
+# update paths
+update_paths
+
 #start build
 build

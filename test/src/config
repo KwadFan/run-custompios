@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# Shebang for better detection of file type
+#!/usr/bin/env bash
+# Shebang for better detection of file type
+
+# Basic configuration needed for all boards/variants
+
+export DIST_NAME=testos
+export DIST_VERSION=0.0.0
+export BASE_IMAGE_ENLARGEROOT=1000
+export BASE_IMAGE_RESIZEROOT=150
+export MODULES="base,pkgupgrade"

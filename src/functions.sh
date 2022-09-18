@@ -55,6 +55,11 @@ checkout_commit() {
     fi
 }
 
+update_paths() {
+    cd /distro
+    ../CustomPiOS/src/update-custompios-paths
+}
+
 build() {
     cd /distro
     if [[ -f "${PWD}/build_dist" ]]; then

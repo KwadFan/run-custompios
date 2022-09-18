@@ -3,7 +3,7 @@
 # Copyright 2022
 # This file is distributed under GPLv3
 
-.PHONY: build test run prune
+.PHONY: build test run prune buildtest
 
 build:
 	docker build --force-rm --tag kwadfan:run-custompios ./src
@@ -13,6 +13,14 @@ test:
 	--env CUSTOMPIOS_REPO=guysoft/CustomPiOS \
 	--env CUSTOMPIOS_BRANCH=devel \
 	--env ACTION_DEBUG=true \
+	kwadfan:run-custompios
+
+buildtest:
+	docker run --rm \
+	--env CUSTOMPIOS_REPO=guysoft/CustomPiOS \
+	--env CUSTOMPIOS_BRANCH=devel \
+	--env ACTION_DEBUG=true \
+	-v "${PWD}"/test/src:/distro \
 	kwadfan:run-custompios
 
 run:

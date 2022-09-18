@@ -1,0 +1,5 @@
+# Ignore Build.log
+build.log
+
+# Ignore Test Workspace
+test/src/workspace
